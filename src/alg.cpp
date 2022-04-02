@@ -36,7 +36,7 @@ std::string str;
         } else if (Imp(inf[i]) == 10) {
                 str.push_back(inf[i]);
                 str.push_back(' ');
-        }else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
+        } else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
             while (Imp(inf[i]) <= Imp(stackA.get()) && !stackA.isEmpty() && Imp(stackA.get()) !=0) {
                 str.push_back(stackA.get());
                 stackA.pop();
@@ -57,12 +57,11 @@ std::string str;
         str.push_back(' ');
         stackA.pop();
     }
-    str.pop_back();
     return str;
 }
 
 int eval(std::string pref) {
-   TStack <char, 100> stackB;
+TStack <char, 100> stackB;
     int j = 0;
     int x, y = 0;
     int Res = 0;
