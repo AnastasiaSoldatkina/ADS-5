@@ -31,7 +31,7 @@ std::string str;
         } else if (Imp(inf[i]) == 10) {
                 str.push_back(inf[i]);
                 str.push_back(' ');
-          } else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
+} else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
                 while (Imp(inf[i]) <= Imp(stackA.get()) && !stackA.isEmpty()) {
                     str.push_back(stackA.get());
                     stackA.pop();
