@@ -22,7 +22,7 @@ int calcul(char w, int x, int y) {
     }
 }
 std::string infx2pstfx(std::string inf) {
- std::string str;
+std::string str;
     TStack <char, 100> stackA;
     int i = 0;
     while (i <= inf.length()) {
@@ -31,7 +31,7 @@ std::string infx2pstfx(std::string inf) {
         } else if (Imp(inf[i]) == 10) {
                 str.push_back(inf[i]);
                 str.push_back(' ');
-            } else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
+          } else if (Imp(inf[i]) <= Imp(stackA.get()) && Imp(inf[i]) != 10 && Imp(inf[i]) != 1) {
                 while (Imp(inf[i]) <= Imp(stackA.get()) && !stackA.isEmpty()) {
                     str.push_back(stackA.get());
                     stackA.pop();
