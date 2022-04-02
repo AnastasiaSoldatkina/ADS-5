@@ -27,7 +27,7 @@ std::string str;
     char probel = ' ';
     TStack <char, 100> stackA;
     for (int i = 0; i < inf.size(); i++) {
-        if (Imp(inf[i]) == 4) {
+        if (Imp(inf[i]) == 10) {
             str.push_back(inf[i]);
             str.push_back(probel);
         } else if (Imp(inf[i]) == 0  && stackA.isEmpty()) {
