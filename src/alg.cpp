@@ -23,43 +23,52 @@ int calcul(char w, int x, int y) {
     }
 }
 std::string infx2pstfx(std::string inf) {
-std::string str = "";
+std::string yep;
     char probel = ' ';
     for (int i = 0; i < inf.size(); i++) {
-        if (Imp(inf[i]) == 10) {
-            str.push_back(inf[i]);
-            str.push_back(probel);
-        } else if (Imp(inf[i]) == 0  && stackA.isEmpty()) {
+        if (Imp(inf[i]) == 4) {
+            yep.push_back(inf[i]);
+            yep.push_back(probel);
+        }
+        else {
+            if (Imp(inf[i]) == 0) {
                 stackA.push(inf[i]);
-            } else if ((Imp(inf[i]) > Imp(stackA.get()))) {
+            }
+            else if (stackA.isEmpty()) {
                 stackA.push(inf[i]);
-            } else if (Imp(inf[i]) == 1) {
+            }
+            else if ((Imp(inf[i]) > Imp(stackA.get()))) {
+                stackA.push(inf[i]);
+            }
+            else if (Imp(inf[i]) == 1) {
                 while (Imp(stackA.get()) != 0) {
-                    str.push_back(stackA.get());
-                    str.push_back(probel);
+                    yep.push_back(stackA.get());
+                    yep.push_back(probel);
                     stackA.pop();
                 }
                 stackA.pop();
-            } else {
+            }
+            else {
                 while (!stackA.isEmpty()
                     && (Imp(inf[i]) <= Imp(stackA.get()))) {
-                    str.push_back(stackA.get());
-                    str.push_back(probel);
+                    yep.push_back(stackA.get());
+                    yep.push_back(probel);
                     stackA.pop();
                 }
                 stackA.push(inf[i]);
             }
+        }
     }
     while (!stackA.isEmpty()) {
-        str.push_back(stackA.get());
-        str.push_back(probel);
+        yep.push_back(stackA.get());
+        yep.push_back(probel);
         stackA.pop();
     }
-    for (int i = 0; i < str.size(); i++) {
-        if (str[str.size() - 1] == ' ')
-            str.erase(str.size() - 1);
+    for (int i = 0; i < yep.size(); i++) {
+        if (yep[yep.size() - 1] == ' ')
+            yep.erase(yep.size() - 1);
     }
-    return str;
+    return yep;
 }
 
 int eval(std::string pref) {
