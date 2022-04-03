@@ -28,3 +28,5 @@ class TStack {
     }
 };
 #endif  // INCLUDE_TSTACK_H_
+TStack<char, 100> stackA;
+TStack<int, 100> stackB;
