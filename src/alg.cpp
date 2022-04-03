@@ -25,7 +25,6 @@ int calcul(char w, int x, int y) {
 std::string infx2pstfx(std::string inf) {
 std::string str;
     char probel = ' ';
-    TStack <char, 100> stackA;
     for (int i = 0; i < inf.size(); i++) {
         if (Imp(inf[i]) == 10) {
             str.push_back(inf[i]);
@@ -65,7 +64,6 @@ std::string str;
 }
 
 int eval(std::string pref) {
-TStack <char, 100> stackB;
     int j = 0;
     int x, y = 0;
     int Res = 0;
