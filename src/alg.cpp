@@ -29,26 +29,21 @@ std::string yep;
         if (Imp(inf[i]) == 4) {
             yep.push_back(inf[i]);
             yep.push_back(probel);
-        }
-        else {
+        } else {
             if (Imp(inf[i]) == 0) {
                 stackA.push(inf[i]);
-            }
-            else if (stackA.isEmpty()) {
+            } else if (stackA.isEmpty()) {
                 stackA.push(inf[i]);
-            }
-            else if ((Imp(inf[i]) > Imp(stackA.get()))) {
+            } else if ((Imp(inf[i]) > Imp(stackA.get()))) {
                 stackA.push(inf[i]);
-            }
-            else if (Imp(inf[i]) == 1) {
+            } else if (Imp(inf[i]) == 1) {
                 while (Imp(stackA.get()) != 0) {
                     yep.push_back(stackA.get());
                     yep.push_back(probel);
                     stackA.pop();
                 }
                 stackA.pop();
-            }
-            else {
+            } else {
                 while (!stackA.isEmpty()
                     && (Imp(inf[i]) <= Imp(stackA.get()))) {
                     yep.push_back(stackA.get());
