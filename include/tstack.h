@@ -9,8 +9,11 @@ class TStack {
     int top;
  public:
     TStack() :top(-1) { }
-    T get() const {
-        return arr[top];
+    T get() {
+        if (!isEmpty())
+            return arr[top];
+        else
+            throw "Stack is empty!";
     }
     bool isEmpty() const {
         return top == -1;
