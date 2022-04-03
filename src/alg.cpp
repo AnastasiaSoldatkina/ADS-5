@@ -23,7 +23,7 @@ int calcul(char w, int x, int y) {
     }
 }
 std::string infx2pstfx(std::string inf) {
-std::string str;
+std::string str = "";
     char probel = ' ';
     for (int i = 0; i < inf.size(); i++) {
         if (Imp(inf[i]) == 10) {
@@ -49,7 +49,6 @@ std::string str;
                 }
                 stackA.push(inf[i]);
             }
-        }
     }
     while (!stackA.isEmpty()) {
         str.push_back(stackA.get());
